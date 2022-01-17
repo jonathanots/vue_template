@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import AppHeader from "@/components/Header.vue";
+import AppFooter from "@/components/Footer.vue";
+import AppMain from "@/components/Main.vue";
+
+export default Vue.extend({
+  components: {
+    AppHeader,
+    AppMain,
+    AppFooter,
+  },
+});
+</script>
 
 <style>
 #app {
@@ -28,5 +41,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.content-body {
+  height: 80%;
 }
 </style>
